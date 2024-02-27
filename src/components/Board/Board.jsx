@@ -7,7 +7,7 @@ const Board = ({valueIsNext, squares, onPlay }) => {
     let status;
 
     if (winner) {
-        status = `Winner ${winner}`;
+        status = `Winner Player ${winner}`;
     }
     else{
         status = `Next Player ${valueIsNext ? 'X' : 'O'}`;
@@ -31,7 +31,7 @@ const Board = ({valueIsNext, squares, onPlay }) => {
     
   return (
     <>
-        <div className='text-black'>{status}</div>
+        <div className={winner ? 'text-orange-600' : 'text-black'}>{status}</div>
         <div className='flex'>
             <Square value = {squares[0]} onSquareClick = {() => handleClick(0)} />
             <Square value = {squares[1]} onSquareClick = {() => handleClick(1)} />
